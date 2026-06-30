@@ -1,0 +1,23 @@
+# Dependency directories
+node_modules/
+
+# Build directories
+dist/
+
+# Env files
+.env
+.env*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / IDE directories
+.idea/
+.vscode/
+*.suo
+*.sw?
+
+# OS files
+Thumbs.db
+Desktop.ini
