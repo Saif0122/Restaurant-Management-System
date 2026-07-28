@@ -23,14 +23,15 @@ class ReportController {
     return csv;
   }
 
-  private handleResponse(req: Request, res: Response, data: any[], filename: string) {
+  private handleResponse(req: Request, res: Response, data: any[], filename: string): void {
     const format = req.query.format as string;
 
     if (format === 'csv') {
       const csvData = this.convertToCSV(data);
       res.setHeader('Content-Type', 'text/csv');
       res.setHeader('Content-Disposition', `attachment; filename="${filename}.csv"`);
-      return res.status(200).send(csvData);
+      res.status(200).send(csvData);
+      return;
     }
 
     res.status(200).json(new ApiResponse(200, data, 'Report generated successfully'));

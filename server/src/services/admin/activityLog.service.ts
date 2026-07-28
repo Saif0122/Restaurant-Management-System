@@ -1,5 +1,5 @@
-import ActivityLog from '../../../models/ActivityLog.model';
-import { FilterQuery } from 'mongoose';
+import ActivityLog from '../../models/ActivityLog.model';
+type FilterQuery<T = any> = Record<string, T | any>;
 
 class ActivityLogService {
   public async logAction(data: {

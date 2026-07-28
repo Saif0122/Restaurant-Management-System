@@ -4,7 +4,7 @@ import { ApiResponse } from '../../utils/ApiResponse';
 import couponService from '../../services/admin/coupon.service';
 
 class CouponController {
-  public getCoupons = asyncHandler(async (req: Request, res: Response) => {
+  public getCoupons = asyncHandler(async (_req: Request, res: Response) => {
     const coupons = await couponService.getCoupons();
     res.status(200).json(new ApiResponse(200, coupons, 'Coupons retrieved successfully'));
   });

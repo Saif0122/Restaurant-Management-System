@@ -1,10 +1,23 @@
 import { Socket, Server } from 'socket.io';
 import logger from '../../utils/logger';
-import { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from '../../types/socket.types';
+import {
+  ClientToServerEvents,
+  ServerToClientEvents,
+  InterServerEvents,
+  SocketData,
+} from '../../types/socket.types';
 
-type TypedSocket = Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
+type TypedSocket = Socket<
+  ClientToServerEvents,
+  ServerToClientEvents,
+  InterServerEvents,
+  SocketData
+>;
 
-export const handleConnection = (socket: TypedSocket, io: Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>) => {
+export const handleConnection = (
+  socket: TypedSocket,
+  _io: Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>,
+) => {
   const { userId, role } = socket.data;
 
   // 1. Join Personal Room
@@ -34,7 +47,7 @@ export const handleConnection = (socket: TypedSocket, io: Server<ClientToServerE
   socket.on('disconnect', (reason) => {
     logger.info(`Socket disconnected: ${socket.id} | User: ${userId} | Reason: ${reason}`);
   });
-  
+
   socket.on('error', (err) => {
     logger.error(`Socket error: ${socket.id} | User: ${userId} | Error: ${err.message}`);
   });

@@ -8,8 +8,8 @@ const objectIdSchema = z.string().refine((val) => mongoose.Types.ObjectId.isVali
 // Common Pagination Schema
 export const paginationSchema = z.object({
   query: z.object({
-    page: z.string().regex(/^\d+$/).optional().transform(Number).default('1'),
-    limit: z.string().regex(/^\d+$/).optional().transform(Number).default('10'),
+    page: z.string().regex(/^\d+$/).default('1').transform(Number),
+    limit: z.string().regex(/^\d+$/).default('10').transform(Number),
     search: z.string().optional(),
     sortBy: z.string().optional(),
     sortOrder: z.enum(['asc', 'desc']).optional().default('desc'),

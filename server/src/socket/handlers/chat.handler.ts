@@ -1,11 +1,26 @@
 import { Socket, Server } from 'socket.io';
 import logger from '../../utils/logger';
-import { ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData } from '../../types/socket.types';
+import {
+  ClientToServerEvents,
+  ServerToClientEvents,
+  InterServerEvents,
+  SocketData,
+} from '../../types/socket.types';
 
-type TypedSocket = Socket<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
-type TypedServer = Server<ClientToServerEvents, ServerToClientEvents, InterServerEvents, SocketData>;
+type TypedSocket = Socket<
+  ClientToServerEvents,
+  ServerToClientEvents,
+  InterServerEvents,
+  SocketData
+>;
+type TypedServer = Server<
+  ClientToServerEvents,
+  ServerToClientEvents,
+  InterServerEvents,
+  SocketData
+>;
 
-export const handleChatEvents = (socket: TypedSocket, io: TypedServer) => {
+export const handleChatEvents = (socket: TypedSocket, _io: TypedServer) => {
   const { userId } = socket.data;
 
   // Join a chat room

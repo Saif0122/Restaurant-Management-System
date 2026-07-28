@@ -1,6 +1,6 @@
-import User, { UserRole } from '../../../models/User.model';
-import { ApiError } from '../../../utils/ApiError';
-import { FilterQuery } from 'mongoose';
+import User, { UserRole } from '../../models/User.model';
+import { ApiError } from '../../utils/ApiError';
+type FilterQuery<T = any> = Record<string, T | any>;
 
 class UserService {
   public async getUsers(options: {

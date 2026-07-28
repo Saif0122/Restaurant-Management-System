@@ -1,4 +1,4 @@
-import Category from '../../../models/Category.model';
+import Category from '../../models/Category.model';
 
 class CategoryService {
   public async bulkAction(categoryIds: string[], action: 'activate' | 'deactivate' | 'delete') {

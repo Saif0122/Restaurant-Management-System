@@ -1,8 +1,7 @@
-import Order from '../../../models/Order.model';
-import User from '../../../models/User.model';
-import Reservation from '../../../models/Reservation.model';
-import Food from '../../../models/Food.model';
-import { FilterQuery } from 'mongoose';
+import Order from '../../models/Order.model';
+import User from '../../models/User.model';
+import Reservation from '../../models/Reservation.model';
+import Food from '../../models/Food.model';
 
 class ReportService {
   private getDateFilter(startDate?: string, endDate?: string) {

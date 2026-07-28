@@ -12,7 +12,10 @@ interface JwtPayload {
  * Socket.IO authentication middleware.
  * Expects JWT token in handshake auth or headers.
  */
-export const verifySocketToken = (socket: Socket<any, any, any, SocketData>, next: (err?: Error) => void) => {
+export const verifySocketToken = (
+  socket: Socket<any, any, any, SocketData>,
+  next: (err?: Error) => void,
+) => {
   try {
     let token = socket.handshake.auth?.token;
 

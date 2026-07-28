@@ -1,6 +1,6 @@
-import Order, { OrderStatus } from '../../../models/Order.model';
-import { ApiError } from '../../../utils/ApiError';
-import { FilterQuery } from 'mongoose';
+import Order, { OrderStatus } from '../../models/Order.model';
+import { ApiError } from '../../utils/ApiError';
+type FilterQuery<T = any> = Record<string, T | any>;
 
 class OrderService {
   public async getOrders(options: {

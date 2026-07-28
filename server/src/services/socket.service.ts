@@ -10,7 +10,7 @@ class SocketService {
    */
   private emitToRoom(room: string, event: string, payload: any) {
     if (io) {
-      // @ts-ignore - Dynamic event string resolution
+      // @ts-expect-error - Dynamic event string resolution
       io.to(room).emit(event, payload);
       logger.debug(`Emitted ${event} to room ${room}`);
     } else {
@@ -77,15 +77,15 @@ class SocketService {
     this.emitToRoom('reservation', 'reservation.created', reservationData);
   }
 
-  public emitReservationApproved(reservationId: string, reservationData: any, customerId: string) {
+  public emitReservationApproved(_reservationId: string, reservationData: any, customerId: string) {
     this.emitToRoom(`user:${customerId}`, 'reservation.approved', reservationData);
   }
 
-  public emitReservationRejected(reservationId: string, reservationData: any, customerId: string) {
+  public emitReservationRejected(_reservationId: string, reservationData: any, customerId: string) {
     this.emitToRoom(`user:${customerId}`, 'reservation.rejected', reservationData);
   }
 
-  public emitReservationCompleted(reservationId: string, reservationData: any, customerId: string) {
+  public emitReservationCompleted(_reservationId: string, reservationData: any, customerId: string) {
     this.emitToRoom(`user:${customerId}`, 'reservation.completed', reservationData);
   }
 

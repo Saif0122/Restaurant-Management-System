@@ -9,7 +9,7 @@ export interface ServerToClientEvents {
   'order.cancelled': (payload: any) => void;
 
   // Notification Events
-  'notification': (payload: { type: string; title: string; message: string; data?: any }) => void;
+  notification: (payload: { type: string; title: string; message: string; data?: any }) => void;
 
   // Reservation Events
   'reservation.created': (payload: any) => void;
@@ -29,9 +29,9 @@ export interface ServerToClientEvents {
 }
 
 export interface ClientToServerEvents {
-  'join_room': (room: string) => void;
-  'leave_room': (room: string) => void;
-  
+  join_room: (room: string) => void;
+  leave_room: (room: string) => void;
+
   // Chat Events
   'chat:join_room': (roomId: string) => void;
   'chat:send_message': (payload: { roomId: string; message: any }) => void;

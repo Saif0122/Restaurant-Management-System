@@ -1,6 +1,6 @@
-import Reservation, { ReservationStatus } from '../../../models/Reservation.model';
-import { ApiError } from '../../../utils/ApiError';
-import { FilterQuery } from 'mongoose';
+import Reservation, { ReservationStatus } from '../../models/Reservation.model';
+import { ApiError } from '../../utils/ApiError';
+type FilterQuery<T = any> = Record<string, T | any>;
 
 class ReservationService {
   public async getReservations(options: {

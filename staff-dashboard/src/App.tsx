@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider, createBrowserRouter } from 'react-router'
-import { Suspense } from 'react'
 
 const queryClient = new QueryClient()
 

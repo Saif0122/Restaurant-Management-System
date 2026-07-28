@@ -1,5 +1,5 @@
-import Food from '../../../models/Food.model';
-import { ApiError } from '../../../utils/ApiError';
+import Food from '../../models/Food.model';
+import { ApiError } from '../../utils/ApiError';
 
 class FoodService {
   public async bulkUpdate(foodIds: string[], updateData: any) {

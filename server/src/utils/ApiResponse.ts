@@ -5,10 +5,15 @@ export class ApiResponse<T = any> {
   public message: string;
   public data: T;
 
-  constructor(statusCode: number, message: string = 'Success', data: T) {
+  constructor(statusCode: number, messageOrData: string | T = 'Success', dataOrMessage?: T | string) {
     this.statusCode = statusCode;
     this.success = true;
-    this.message = message;
-    this.data = data;
+    if (typeof messageOrData === 'string') {
+      this.message = messageOrData;
+      this.data = (dataOrMessage !== undefined ? dataOrMessage : null) as T;
+    } else {
+      this.data = messageOrData as T;
+      this.message = typeof dataOrMessage === 'string' ? dataOrMessage : 'Success';
+    }
   }
 }

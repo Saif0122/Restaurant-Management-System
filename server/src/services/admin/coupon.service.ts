@@ -1,5 +1,5 @@
-import Coupon from '../../../models/Coupon.model';
-import { ApiError } from '../../../utils/ApiError';
+import Coupon from '../../models/Coupon.model';
+import { ApiError } from '../../utils/ApiError';
 
 class CouponService {
   public async getCoupons() {

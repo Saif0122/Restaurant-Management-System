@@ -4,7 +4,7 @@ import { ApiResponse } from '../../utils/ApiResponse';
 import bannerService from '../../services/admin/banner.service';
 
 class BannerController {
-  public getBanners = asyncHandler(async (req: Request, res: Response) => {
+  public getBanners = asyncHandler(async (_req: Request, res: Response) => {
     const banners = await bannerService.getBanners();
     res.status(200).json(new ApiResponse(200, banners, 'Banners retrieved successfully'));
   });

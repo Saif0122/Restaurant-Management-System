@@ -1,5 +1,5 @@
-import Banner from '../../../models/Banner.model';
-import { ApiError } from '../../../utils/ApiError';
+import Banner from '../../models/Banner.model';
+import { ApiError } from '../../utils/ApiError';
 
 class BannerService {
   public async getBanners() {

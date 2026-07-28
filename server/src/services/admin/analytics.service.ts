@@ -1,12 +1,11 @@
-import Order from '../../../models/Order.model';
-import User, { UserRole } from '../../../models/User.model';
-import Reservation from '../../../models/Reservation.model';
-import Food from '../../../models/Food.model';
-import Category from '../../../models/Category.model';
-import Coupon from '../../../models/Coupon.model';
-import ActivityLog from '../../../models/ActivityLog.model';
+import Order from '../../models/Order.model';
+import User, { UserRole } from '../../models/User.model';
+import Reservation from '../../models/Reservation.model';
+import Food from '../../models/Food.model';
+import Category from '../../models/Category.model';
+import Coupon from '../../models/Coupon.model';
+import ActivityLog from '../../models/ActivityLog.model';
 import moment from 'moment';
-import mongoose from 'mongoose';
 
 class AnalyticsService {
   public async getDashboardStats() {
@@ -60,7 +59,7 @@ class AnalyticsService {
       customers: 0,
       staff: 0,
     };
-    usersCount.forEach((u) => {
+    usersCount.forEach((u: any) => {
       users.total += u.count;
       if (u._id === UserRole.CUSTOMER) {
         users.customers = u.count;
@@ -85,7 +84,7 @@ class AnalyticsService {
       completed: 0,
       cancelled: 0,
     };
-    ordersCount.forEach((o) => {
+    ordersCount.forEach((o: any) => {
       orders.total += o.count;
       if (o._id === 'Pending') {
         orders.pending = o.count;
@@ -139,7 +138,7 @@ class AnalyticsService {
     ]);
 
     // Fix image array issue if any
-    const formattedBestSellers = bestSellers.map((bs) => ({
+    const formattedBestSellers = bestSellers.map((bs: any) => ({
       ...bs,
       image: bs.image && bs.image.length > 0 ? bs.image[0].url : '',
     }));
