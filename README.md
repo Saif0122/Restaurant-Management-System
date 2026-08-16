@@ -264,8 +264,8 @@ Run each application independently during development.
 
 Full Stack MERN Developer | AI Application Developer
 
-- 🌐 Portfolio: `https://your-portfolio.com`
-- 💼 LinkedIn: `https://linkedin.com/in/your-profile`
+- 🌐 Portfolio: `https://saifulislam.vercel.app`
+- 💼 LinkedIn: `https://linkedin.com/in/saif-ul-islam-66261b323`
 - 🐙 GitHub: `https://github.com/Saif0122`
 
 ---
